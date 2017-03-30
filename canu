@@ -1,0 +1,13 @@
+#run canu.sh to assemble PacBio Sequence data
+
+#!/bin/bash
+
+cd /home/student/binf8940/s_150/2nd_data
+
+export PATH=/usr/local/canu/1.4/Linux-amd64/bin:/usr/local/java/jdk1.8.0_74/bin:${PATH}
+export LD_LIBRARY_PATH=/usr/local/gcc/5.3.0/lib64:${LD_LIBRARY_PATH}
+export JAVA_HOME=/usr/local/java/jdk1.8.0_74
+
+canu -p ecoli -d ecoli-auto  genomeSize=4.8m  -pacbio-raw p6.25x.fastq  useGrid=false
+
+#qsub -q rcc-30d -l mem_total=8g -pe thread 4 ./canu.sh
