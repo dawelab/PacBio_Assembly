@@ -1,0 +1,29 @@
+Assembly	ecoli.contigs
+# contigs (>= 0 bp)	1
+# contigs (>= 1000 bp)	1
+# contigs (>= 5000 bp)	1
+# contigs (>= 10000 bp)	1
+# contigs (>= 25000 bp)	1
+# contigs (>= 50000 bp)	1
+Total length (>= 0 bp)	4630757
+Total length (>= 1000 bp)	4630757
+Total length (>= 5000 bp)	4630757
+Total length (>= 10000 bp)	4630757
+Total length (>= 25000 bp)	4630757
+Total length (>= 50000 bp)	4630757
+# contigs	1
+Largest contig	4630757
+Total length	4630757
+Reference length	4641652
+GC (%)	50.76
+Reference GC (%)	50.79
+N50	4630757
+NG50	4630757
+N75	4630757
+NG75	4630757
+L50	1
+LG50	1
+L75	1
+LG75	1
+# N's per 100 kbp	0.00
+NGA50	-
