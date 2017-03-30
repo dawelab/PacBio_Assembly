@@ -1,4 +1,5 @@
 #run canu.sh to assemble PacBio Sequence data
+
 #!/bin/bash
 
 cd /home/student/binf8940/s_150/2nd_data
@@ -16,17 +17,18 @@ canu -p ecoli -d ecoli-auto  genomeSize=4.8m  -pacbio-raw p6.25x.fastq  useGrid=
 wget -O ecolik12_reference "http://www.ebi.ac.uk/ena/data/view/U00096&display=fasta"
 ///
 
-# run mummer to evaluate the assemble
+# run mummer.sh to evaluate the assemble
 #!/bin/bash
 cd /home/student/binf8940/s_150/2nd_data
 time /usr/local/mummer/latest/mummer -mum -b -c ecolik12_reference ./ecoli-auto/ecoli.contigs.fasta > mummer.mus
+#qsub -q rcc-30d ./mummer.sh
 ///
 
 #run mummerplot.sh to view the plot
 #!/bin/bash
 cd /home/student/binf8940/s_150/2nd_data
 time /usr/local/mummer/latest/mummerplot -postscript -p mummer mummer.mus
-
+#qsub -q rcc-30d ./mummerplot.sh
 
 
 
