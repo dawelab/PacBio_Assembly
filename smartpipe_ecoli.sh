@@ -18,3 +18,11 @@ ls /escratch4/s_150/s_150_Mar_30/E01_1/Analysis_Results/*bas.h5 > $basedir1/Ecol
 
 # clean up tmp files
 rm -f $basedir/tmp*
+
+# set up the smrtanalysis environment
+source /usr/local/smrtanalysis/2.2.0/current/etc/setup.sh
+
+# format the E. coli canu assembly as a new smrtanalysis reference genome (NB: ignore the SLF4J warnings)
+referenceUploader -c -p /home/student/binf8940/s_150/2nd_data/ecoli-auto/ -n ECOLI_CANU -f /home/student/binf8940/s_150/2nd_data/ecoli-auto/ecoli.unitigs.fasta --saw='sawriter -welter -blt 8' --samIdx='samtools faidx'
+
+
