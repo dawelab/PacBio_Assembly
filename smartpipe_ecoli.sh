@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # set up the base directory for your analysis
-basedir1="/escratch4/s_150/s_150_Mar_30/Ecoli_out_new"
+basedir1="/escratch4/s_150/s_150_Mar_30/Ecoli_out_new2"
 mkdir $basedir1
 
 # set up the smrtanalysis environment
