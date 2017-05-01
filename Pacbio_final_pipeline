@@ -18,7 +18,6 @@ canu -p ecoli -d ecoli-auto2  genomeSize=4.8m  -pacbio-raw p6.25x.fastq  useGrid
 
 #PacBio SMRTAnalysis Lab III
 
-#!/bin/bash
 
 # set up the base directory for your analysis
 basedir1="Ecoli_out2"
@@ -48,13 +47,11 @@ rm -f $basedir/tmp*
 
 #3-Prokka annotation of polished and unpolished assembly
 
-#!/bin/bash
 cd /escratch4/s_150/s_150_Mar_30
 export 
 PATH=/usr/local/prokka/1.11/bin/:/usr/local/hmmer/2.3.2/bin/:/usr/local/rnammer/latest/:/usr/local/tbl2asn/01052015:/usr/local/signalp/4.1c/:/usr/local/parallel/20150822/bin:$PATH
 time /usr/local/prokka/1.11/bin/prokka /home/student/binf8940/s_150/2nd_data/ecoli-auto2/ecoli.contigs.fasta --outdir /escratch4/s_150/s_150_Mar_30/ecoli_unpolished_prokka2
 
-#!/bin/bash
 cd /escratch4/s_150/s_150_Mar_30
 export 
 PATH=/usr/local/prokka/1.11/bin/:/usr/local/hmmer/2.3.2/bin/:/usr/local/rnammer/latest/:/usr/local/tbl2asn/01052015:/usr/local/signalp/4.1c/:/usr/local/parallel/20150822/bin:$PATH
@@ -65,16 +62,16 @@ time /usr/local/prokka/1.11/bin/prokka /escratch4/s_150/s_150_Mar_30/Ecoli_out2/
 #4-Quast analysis of polished and unpolished assembly
 
 # run quast.sh to evaluate the assemble
-#!/bin/bash
 cd /home/student/binf8940/s_150/2nd_data
 python2.7 /usr/local/quast/latest/quast.py  ./ecoli-auto2/ecoli.contigs.fasta -o ./Result -L -R /home/student/binf8940/s_150/compare/reference.fa 
+
+python2.7 /usr/local/quast/latest/quast.py  /escratch4/s_150/s_150_Mar_30/Ecoli_out2/data/consensus.fasta -o ./Result_polished -L -R /home/student/binf8940/s_150/compare/reference.fa 
 
 ###################################################################
 ###################################################################
 
 #5-smrtpipe modification and motif analysis of polished assembly
 
-#!/bin/bash
 
 # set up the base directory for your analysis
 basedir="/escratch4/s_150/s_150_Mar_30/Modification_and_Motif_ecoli2"
